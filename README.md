@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# TODO-APP
+# WEATHER-APP
 
 > In this project, I built a simple weather app
 ## Built With
@@ -18,9 +18,9 @@
 ## Getting Started
 
 - Clone this repo https://github.com/rukundoeric/weather-app
-- Navigate to project directory.
-- If you have liveserver in you vs-code, just run it.
-- Ortherwise just open `dist/index.html` page with your browser.
+- Navigate to the project directory.
+- If you have liveserver in your vs-code, just run it.
+- Otherwise, just open the `dist/index.html` page with your browser.
 
 ## Authors
 
