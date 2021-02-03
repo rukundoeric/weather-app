@@ -9,6 +9,11 @@ export default class Element {
     return this.elm;
   }
 
+  setText(text) {
+    this.elm.innerHTML = text;
+    return this;
+  }
+
   hide() {
     this.elm.style.display = 'none';
     return this;
@@ -19,6 +24,8 @@ export default class Element {
     return this;
   }
 }
+
+export const form = new Element().find('weather-info-fm');
 
 export const c_city_name = new Element().find('#c-city-name');
 export const c_c_flag = new Element().find('#c-c-flag');
