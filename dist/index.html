@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Yusei+Magic&display=swap" rel="stylesheet">
+  <title>Weather App</title>
+</head>
+
+<body>
+  <div class="container-wa d-flex justify-content-center align-items-center">
+    <div class="content">
+      <div class="d-flex justify-content-center mt-5 pt-2">
+        <img class="logo" src="https://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/weather-icon.png"
+          alt="icon">
+      </div>
+      <h4 class="text-center">Weather App</h4>
+      <div class="d-flex align-items-center justify-content-center">
+        <form id="weather-info">
+          <input type="text" class="py-2 px-3 mt-4 text-center" name="city" id="city" placeholder="City">
+        </form>
+      </div>
+
+      <div id="not-found" class=" d-none align-items-center justify-content-center mt-5">
+        <small>Could not find city with that name, please try again...</small>
+      </div>
+      <div id="w-c-info" class="d-none">
+        <div class="d-flex align-items-center justify-content-center mt-5">
+          <div class="d-flex align-items-center">
+            <h1 id="c-city-name" class="mx-2">Kigali, RW</h1>
+            <img id="c-c-flag" class="mx-2 flag" src="https://www.countryflags.io/RW/flat/64.png" alt="flag">
+          </div>
+        </div>
+        <div class="d-flex flex-column align-items-center justify-content-center">
+          <div class="d-flex c-weather-num-info align-items-center justify-content-center">
+            <div class="d-flex align-items-center">
+              <p id="c-c-value" class="c-value">25°C</p>
+              <img id="c-c-icon" src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-center">
+          <p id="c-others">Feels Like 20C | Light Rain | Humidity 42%</p>
+        </div>
+        <div class="d-flex align-items-center justify-content-center">
+          <small id="c-times">Sunrise: 09:35 AM | LSunset: 09:35 PM</small>
+        </div>
+      </div>
+      <div id="loader" class="loader d-flex align-items-center justify-content-center">
+        <div class="lds-ripple"><div></div><div></div></div> 
+      </div>
+
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>
