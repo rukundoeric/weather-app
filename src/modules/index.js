@@ -10,7 +10,7 @@ import {
   c_times,
   not_found,
   w_c_info,
-  loader
+  loader,
 } from '../helpers/element';
 
 export const displayInfo = ({
@@ -28,17 +28,21 @@ export const displayInfo = ({
   c_c_icon.get().src = weatherIcon(icon);
 
   c_others.setText(`Feels Like ${feels_like}°C | ${description} | Humidity ${humidity}%`);
-  c_times.setText(`Sunrise: ${toSunriseLT(sunrise)} | LSunset: ${toSunsetLT(sunset)}`);
+  c_times.setText(`Sunrise: ${toSunriseLT(sunrise)} | Sunset: ${toSunsetLT(sunset)}`);
+
+  loader.hide();
+  not_found.hide();
+  w_c_info.show('block');
 };
 
 export const displayNotFound = () => {
   w_c_info.hide();
   loader.hide();
-  not_found.show();
+  not_found.show('flex');
 };
 
 export const displayLoader = () => {
   w_c_info.hide();
   not_found.hide();
-  loader.show();
+  loader.show('flex');
 };

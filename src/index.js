@@ -1,10 +1,19 @@
-import axios from 'axios';
+import { form as _ } from './helpers/element';
+import Weather from './modules/_weather';
+import {
+  displayInfo,
+  displayNotFound,
+  displayLoader,
+} from './modules/index';
 
-const api = (v) => `https://api.openweathermap.org/data/2.5/weather?q=${v}&appid=3069ae2718e40f8dc1998b7250e16f10&units=metric`;
-
-const loadData = async () => {
-  const { data } = await axios.get(api('kigali'));
-  console.log(data);
-};
-
-loadData();
+displayLoader();
+_.get().addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+  try {
+    const responce = await (await new Weather().find(formData.get('city'), displayLoader)).get();
+    displayInfo(responce);
+  } catch (err) {
+    displayNotFound();
+  }
+});

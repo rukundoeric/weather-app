@@ -19,13 +19,13 @@ export default class Element {
     return this;
   }
 
-  show() {
-    this.elm.style.display = 'flex';
+  show(d) {
+    this.elm.style.display = d;
     return this;
   }
 }
 
-export const form = new Element().find('weather-info-fm');
+export const form = new Element().find('#weather-info-fm');
 
 export const c_city_name = new Element().find('#c-city-name');
 export const c_c_flag = new Element().find('#c-c-flag');
