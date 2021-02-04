@@ -27,6 +27,7 @@ export default class Element {
 
 export const form = new Element().find('#weather-info-fm');
 export const checkbox = new Element().find('#checkbox'); 
+export const body = new Element().find('#body');
 
 export const c_city_name = new Element().find('#c-city-name');
 export const c_c_flag = new Element().find('#c-c-flag');

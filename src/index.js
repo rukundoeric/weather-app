@@ -8,7 +8,7 @@ import {
 
 const weather = new Weather();
 
-// displayLoader();
+displayLoader();
 _.get().addEventListener('submit', async (e) => {
   e.preventDefault();
   const formData = new FormData(e.target);

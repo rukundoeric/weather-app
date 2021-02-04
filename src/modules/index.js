@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { countryFlag, weatherIcon } from '../helpers/apis';
+import { countryFlag, weatherIcon, weatherBackground } from '../helpers/apis';
 import { sunrise as toSunriseLT, sunset as toSunsetLT } from '../helpers/time';
 import temperature from '../helpers/temp';
 import {
@@ -12,6 +12,7 @@ import {
   not_found,
   w_c_info,
   loader,
+  body,
 } from '../helpers/element';
 
 export const displayInfo = ({
@@ -30,6 +31,8 @@ export const displayInfo = ({
 
   c_others.setText(`Feels Like ${temperature(feels_like, isF)} | ${description} | Humidity ${humidity}%`);
   c_times.setText(`Sunrise: ${toSunriseLT(sunrise)} | Sunset: ${toSunsetLT(sunset)}`);
+
+  body.get().style.backgroundImage = `url('${weatherBackground(icon)}')`;
 
   loader.hide();
   not_found.hide();
