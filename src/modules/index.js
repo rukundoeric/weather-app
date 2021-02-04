@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 import { countryFlag, weatherIcon } from '../helpers/apis';
 import { sunrise as toSunriseLT, sunset as toSunsetLT } from '../helpers/time';
+import temperature from '../helpers/temp';
 import {
   c_city_name,
   c_c_flag,
@@ -18,16 +19,16 @@ export const displayInfo = ({
   main: { feels_like, humidity, temp },
   sys: { country, sunrise, sunset },
   weather,
-}) => {
+}, isF) => {
   const { description, icon } = weather[0];
 
   c_city_name.setText(`${name}, ${country}`);
   c_c_flag.get().src = countryFlag(country);
 
-  c_c_value.setText(`${temp}°C`);
+  c_c_value.setText(temperature(temp, isF));
   c_c_icon.get().src = weatherIcon(icon);
 
-  c_others.setText(`Feels Like ${feels_like}°C | ${description} | Humidity ${humidity}%`);
+  c_others.setText(`Feels Like ${temperature(feels_like, isF)} | ${description} | Humidity ${humidity}%`);
   c_times.setText(`Sunrise: ${toSunriseLT(sunrise)} | Sunset: ${toSunsetLT(sunset)}`);
 
   loader.hide();
